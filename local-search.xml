@@ -39,8 +39,8 @@
   
   <entry>
     <title>BERT简读</title>
-    <link href="/2025/05/16/NLP_BERT/"/>
-    <url>/2025/05/16/NLP_BERT/</url>
+    <link href="/2025/08/24/NLP_BERT/"/>
+    <url>/2025/08/24/NLP_BERT/</url>
     
     
     
@@ -57,15 +57,15 @@
   
   
   <entry>
-    <title>DL散度</title>
-    <link href="/2024/03/28/DL%E6%95%A3%E5%BA%A6/"/>
-    <url>/2024/03/28/DL%E6%95%A3%E5%BA%A6/</url>
+    <title>0152.一道非典型动态规划题</title>
+    <link href="/2025/08/24/0152/"/>
+    <url>/2025/08/24/0152/</url>
     
     
     
     <tags>
       
-      <tag>数理统计</tag>
+      <tag>Algorithm</tag>
       
     </tags>
     
@@ -117,23 +117,6 @@
     <tags>
       
       <tag>模型微调</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>0152.一道非典型动态规划题</title>
-    <link href="/2024/03/11/0152/"/>
-    <url>/2024/03/11/0152/</url>
-    
-    
-    
-    <tags>
-      
-      <tag>Algorithm</tag>
       
     </tags>
     

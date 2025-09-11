@@ -16,22 +16,26 @@
   <meta name="author" content="Yong">
   <meta name="keywords" content="">
   
-    <meta name="description" content="简单翻译一下英语wiki">
+    <meta name="description" content="Leetcode动态规划的题目152. Maximum Product Subarray">
 <meta property="og:type" content="article">
-<meta property="og:title" content="DL散度">
-<meta property="og:url" content="https://www.ydhuyong.online/2024/03/28/DL%E6%95%A3%E5%BA%A6/index.html">
-<meta property="og:site_name" content="Yong&#39;s 书桌">
-<meta property="og:description" content="简单翻译一下英语wiki">
+<meta property="og:title" content="0152.一道非典型动态规划题">
+<meta property="og:url" content="https://www.ydhuyong.online/2025/08/24/0152/index.html">
+<meta property="og:site_name" content="MyZone">
+<meta property="og:description" content="Leetcode动态规划的题目152. Maximum Product Subarray">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2024-03-27T16:11:02.731Z">
-<meta property="article:modified_time" content="2024-03-27T16:12:03.057Z">
+<meta property="og:image" content="https://www.ydhuyong.online/assets/001.png">
+<meta property="og:image" content="https://www.ydhuyong.online/assets/002.png">
+<meta property="og:image" content="https://www.ydhuyong.online/assets/003.png">
+<meta property="article:published_time" content="2025-08-24T07:22:10.720Z">
+<meta property="article:modified_time" content="2025-09-01T15:14:30.294Z">
 <meta property="article:author" content="Yong">
-<meta property="article:tag" content="数理统计">
+<meta property="article:tag" content="Algorithm">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://www.ydhuyong.online/assets/001.png">
   
   
   
-  <title>DL散度 - Yong&#39;s 书桌</title>
+  <title>0152.一道非典型动态规划题 - MyZone</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -97,7 +101,7 @@
   <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand" href="/">
-      <strong>Yong&#39;s 书桌</strong>
+      <strong>我的空间</strong>
     </a>
 
     <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
@@ -175,7 +179,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle">DL散度</span>
+            <span id="subtitle">0152.一道非典型动态规划题</span>
           
         </div>
 
@@ -186,8 +190,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-03-28 00:11" pubdate>
-          2024年3月28日 凌晨
+        <time datetime="2025-08-24 15:22" pubdate>
+          2025年8月24日 下午
         </time>
       </span>
     
@@ -198,7 +202,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          9 字
+          354 字
         
       </span>
     
@@ -209,7 +213,7 @@
         
         
         
-          1 分钟
+          5 分钟
         
       </span>
     
@@ -246,13 +250,32 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">DL散度</h1>
+            <h1 id="seo-header">0152.一道非典型动态规划题</h1>
             
             
               <div class="markdown-body">
                 
-                <p>简单翻译一下英语wiki</p>
+                <p>Leetcode动态规划的题目<a target="_blank" rel="noopener" href="https://leetcode.com/problems/maximum-product-subarray/">152. Maximum Product Subarray</a></p>
 <span id="more"></span>
+<p>题目不难，是<a target="_blank" rel="noopener" href="https://leetcode.com/problems/maximum-subarray/">53. Maximum Subarray</a>的拓展。</p>
+<p>标准的解法就是动态规划，时间复杂度O(n)，空间复杂度O(1)。《算法导论》为了介绍分治，在第四章Divide-and-Conquer，介绍了另一种方法，时间复杂度为O(nlogn)，此处不再赘述。</p>
+<p><a target="_blank" rel="noopener" href="https://leetcode.com/problems/maximum-product-subarray/discuss/183483/JavaC%2B%2BPython-it-can-be-more-simple">lee215</a>大牛的另一种解法令人耳目一新:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">maxProduct</span>(<span class="hljs-params">self, A</span>):<br>    B = A[::-<span class="hljs-number">1</span>]<br>    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">1</span>, <span class="hljs-built_in">len</span>(A)):<br>        A[i] *= A[i - <span class="hljs-number">1</span>] <span class="hljs-keyword">or</span> <span class="hljs-number">1</span><br>        B[i] *= B[i - <span class="hljs-number">1</span>] <span class="hljs-keyword">or</span> <span class="hljs-number">1</span><br>    <span class="hljs-keyword">return</span> <span class="hljs-built_in">max</span>(A + B)<br></code></pre></td></tr></table></figure>
+<p>首先，用0把数组划分为若干个子数组，最终的结果在0和不含0子数组中产生。</p>
+<p><img src="/assets/001.png" srcset="/img/loading.gif" lazyload alt="001"></p>
+<p>以一个不含0的长度为n的<strong>整数数组</strong>nums为例，最终可以证明，<strong>该数组的最大乘积，一定是从某端点出发，延展到某个位置为止</strong>。</p>
+<p><img src="/assets/002.png" srcset="/img/loading.gif" lazyload alt="002"></p>
+<p>分类讨论</p>
+<ol>
+<li>假如这个数组没有负数，最大乘积一定是从最左端到最右端，结论成立</li>
+<li>假设这个数组包含1个负数，负数位于index，那最大乘积一定是由<code>nums[ : index]</code>或者<code>nums[ index + 1: ]</code>产生，结论成立</li>
+</ol>
+<p><img src="/assets/003.png" srcset="/img/loading.gif" lazyload alt="003"></p>
+<ol>
+<li>假如这个数组包含偶数个负数，最大乘积一定是从最左端到最右端，结论成立</li>
+<li>假如这个数组包含3个负数，分割点一定是第一个负数(i)或者第三个负数(k)，结论成立</li>
+</ol>
+<p>依此类推，这个结论是成立的。</p>
 
                 
               </div>
@@ -265,7 +288,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/" class="print-no-link">#数理统计</a>
+        <a href="/tags/Algorithm/" class="print-no-link">#Algorithm</a>
       
     </div>
   
@@ -277,8 +300,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>DL散度</div>
-      <div>https://www.ydhuyong.online/2024/03/28/DL散度/</div>
+      <div>0152.一道非典型动态规划题</div>
+      <div>https://www.ydhuyong.online/2025/08/24/0152/</div>
     </div>
     <div class="license-meta">
       
@@ -290,13 +313,13 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2024年3月28日</div>
+          <div>2025年8月24日</div>
         </div>
       
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2024年3月28日</div>
+          <div>2025年9月1日</div>
         </div>
       
       
@@ -327,7 +350,7 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2025/05/16/NLP_BERT/" title="BERT简读">
+                      <a href="/2025/08/24/NLP_BERT/" title="BERT简读">
                         <i class="iconfont icon-arrowleft"></i>
                         <span class="hidden-mobile">BERT简读</span>
                         <span class="visible-mobile">上一篇</span>
